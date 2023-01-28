@@ -7,6 +7,10 @@ const TableHeadItem = ({ item }) => {
 };
 
 const TableRow = ({ data }) => {
+    if (data == undefined) {
+        return "loading ..."
+    }
+    
     return (
         <tr className="bg-white border-b hover:bg-gray-200">
 
@@ -19,6 +23,9 @@ const TableRow = ({ data }) => {
 };
 
 const Table = ({thead_data, tbody_data}) => {
+    if (thead_data == undefined || tbody_data == undefined) {
+        return "loading ..."
+    }
 
     return (
         
