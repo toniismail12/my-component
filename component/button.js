@@ -5,7 +5,7 @@ const Button = ({text, btn}) => {
     if (btn == 'primary') {
         return (
             
-            <button className='bg-blue-pusri text-white hover:text-white p-2 rounded-lg hover:font-bold transition-all'> <span className="mx-3"> {text}  </span> </button>
+            <button className='bg-blue-500 text-white hover:text-white p-2 rounded-lg hover:font-bold transition-all'> <span className="mx-3"> {text}  </span> </button>
             
         );
     }
