@@ -14,8 +14,8 @@ const TableRow = ({ data }) => {
     return (
         <tr className="bg-white border-b hover:bg-gray-200">
 
-            {data.map((item) => {
-                return <td key={item} className="py-4 px-6">{item}</td>;
+            {data.map((item, i) => {
+                return <td key={i} className="py-4 px-6">{item}</td>;
             })}
            
         </tr>
@@ -33,16 +33,16 @@ const Table = ({thead_data, tbody_data}) => {
             <thead className="text-normal text-gray-800 uppercase bg-gray-300">
                 <tr className='border-b'>
 
-                    {thead_data.map((h) => {
-                        return <TableHeadItem key={h} item={h} />;
+                    {thead_data.map((h, i) => {
+                        return <TableHeadItem key={i} item={h} />;
                     })}
 
                 </tr>
             </thead>
             <tbody>
 
-                {tbody_data.map((item) => {
-                    return <TableRow key={item.id} data={item.items} />;
+                {tbody_data.map((item, i) => {
+                    return <TableRow key={i} data={item.items} />;
                 })}
 
             </tbody>
