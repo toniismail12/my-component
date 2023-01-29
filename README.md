@@ -1,6 +1,6 @@
-# my-component
+# my-component using tailwind css
 
-### table and button with tailwind css
+### table, button, pagination, modal
 <p>
 reactjs || nextjs
 </p>
