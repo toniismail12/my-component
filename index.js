@@ -9,6 +9,8 @@ export default function Page() {
     const [page, setPage] = useState(1);
     const [total_row, setTotal_row] = useState('');
 
+    const [show_modal, set_show_modal] = useState(false)
+
     const thead = ["No", "Subject", "Date"];
 
     const tbody = [
@@ -73,20 +75,38 @@ export default function Page() {
 
     }
 
+    const handle_show_modal = (status) => (onClick) => {
+
+        if (status == false) {
+			set_show_modal(true)
+		} else {
+			set_show_modal(false)
+		}
+        
+    }
+
     return (
 
         <div className="grid grid-cols-1 gap-5">
 
+            <div>
+                {/* button show modal */}
+				<button onClick={handle_show_modal(show_modal)} className="bg-blue-pusri p-2 text-white rounded-lg hover:bg-blue-800 hover:font-bold transition-all"><span className="mx-5">Show Modal</span></button>
+			</div>
+
             <div className="col-span-1 bg-white border border-gray-300">
 
+                {/* button component */}
                 <Button text="New" btn="primary" />
 
 				<div className="inline-flex items-center text-sm font-medium rounded col-span-1">
                     Shows <input onChange={onChangeLimit} value={limit} type="number" className="w-14 border-2 p-1 focus:border-blue-600 focus:outline-none transition ease-in-out rounded-lg ml-1" />
                 </div>
                 
+                {/* table component */}
                 <Table thead_data={thead} tbody_data={tbody} /> 
 
+                {/* pagination component */}
                 <Pagination 
                     limit={limit} 
                     page={page} 
@@ -96,6 +116,24 @@ export default function Page() {
                 />
                
             </div>
+
+            {/* modal component */}
+            <Modal
+				// tittle="heheh"
+				show_modal={show_modal}
+				onClick={handle_show_modal(show_modal)}
+			>
+				
+                {/* content here */}
+				<div>
+											
+					{/* content */}
+                    <h1>Hheheh</h1>
+
+				</div>
+                {/* end content */}
+
+			</Modal>
 
         </div>
 
